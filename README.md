@@ -1,6 +1,6 @@
 # Insights Service
 
-As part of out latest MVP build we need to present a user with some insights about their spending. We need to build a server that returns JSON formatted insights. A list of transactions for a user can be retrieved at `GET https://transactions.spokedev.xyz/transactions`. (Make sure you use https!!!). The server should fetch this list, then calculate the insights below, and return them in the body of the response with a 200 response code. 
+As part of out latest MVP build we need to present a user with some insights about their spending. We need to build a server that returns JSON formatted insights. A list of transactions for a user can be retrieved at `GET https://jigsaw-transactions.herokuapp.com/transactions`. (Make sure you use https!!!). The server should fetch this list, then calculate the insights below, and return them in the body of the response with a 200 response code. 
 
 The api returns an array of transactions:
 
@@ -74,14 +74,14 @@ returns a daily cashflow of all transactions grouped by day. For days on which t
 }
 ```
 
-3. Is a suprise! Will work on it together in person :)
+3. Stretch Goal, we will talk through this task together if you reach this point.
 
 ## Some notes
 
-1. all values are integer. Don't worry about dealing with floating point precisions, the front end can deal with the presentation logic.
-2. you can use any npm package you like, but only with good reason! This includes the testing framework which you can change :)
+1. All values are integer. Don't worry about dealing with floating point precisions, the front end can deal with the presentation logic.
+2. You can use any npm package you like, but only with good reason! This includes the testing framework which you can change :)
 3. We've provided some boilerplate code, but feel free to rearrange as you want...
-4. There's a little test script we've written which will start the server, run the tests and pull it down again. But feel free to orchastrate your tests however you want!
+4. There's a little test script we've written which will start the server, run the tests and pull it down again. But feel free to orchestrate your tests however you want!
 
 ## Things we value
 
