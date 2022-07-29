@@ -1,27 +1,28 @@
 const express = require('express');
+
 const router = express.Router();
 
-router.get('/categories', async (req, res, next) => {
+router.get('/categories', async (_, res, next) => {
   try {
     res.status(501).json({ message: 'Not Implemented' });
   } catch (err) {
-    return next(err);
+    next(err);
   }
 });
 
-router.get('/cashflow', async (req, res, next) => {
+router.get('/cashflow', async (_, res, next) => {
   try {
     res.status(501).json({ message: 'Not Implemented' });
   } catch (err) {
-    return next(err);
+    next(err);
   }
 });
 
-router.get('/merchants', async (req, res, next) => {
+router.get('/merchants', async (_, res, next) => {
   try {
     res.status(501).json({ message: 'Not Implemented' });
   } catch (err) {
-    return next(err);
+    next(err);
   }
 });
 

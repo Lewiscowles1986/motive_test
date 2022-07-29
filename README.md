@@ -23,28 +23,57 @@ The api returns an array of transactions:
 ]
 ```
 
-From this list we'll need to build a server that exposes the following routes, which calculate different insights about a users spending depending on which route is called:
+From this list we'll need to build a server that exposes the following routes, which calculate different insights about a users spending depending on which route is called and publish the results to a queue:
 
 1. `GET /insights/categories`
 
-User Story: 
+User Stories: 
 ```
 As a User
-So that I can gain an understanding of my finances
-I want to see an aggregated list of my transactions by category
+So that I can gain an understanding of my spending
+I want to see a simple list of total spend by category
 ```
-
-
-returns the number, total and average value of all transactions grouped by the transaction category.
 
 ```json
 {
-  "food": {
-    "totalNumber": 10,
-    "totalValue": 400,
-    "averageValue": 40
-  },
+  "food": 400, //accumulated total amount
+  "shopping": 200, //accumulated total amount
   ...
+}
+```
+
+Then publish the results: 
+
+```
+As a System
+So that I can asynchronously process information
+I want to publish the total spend by category so other services can process it
+```
+
+Publish the results of the aggregated total spend by category to the AWS SQS queue `motive-test-queue`. 
+
+### Using Localstack And Docker Compose:
+
+Please see the directory `sqs_local` if you would like to run a local instance of sqs for testing. This is not essential.
+
+In the directory `sqs_local/local_helpers` there are helper functions to investigate the running queue (will need aws cli)
+
+### Testing Strategy
+
+Whether using localstack or not it's worth considering testing strategy. You will want to stub SQS in a way that allows for asserting messages are being sent.
+
+### Useful AWS SDK docs:
+
+- https://www.npmjs.com/package/aws-sdk
+- https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html
+- https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/using-promises.html
+
+Local config would look like:
+
+```
+{
+  endpoint: 'http://localhost:4566',
+  region: 'eu-west-1',
 }
 ```
 

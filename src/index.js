@@ -4,7 +4,7 @@ const insightsRouter = require('./routers/insights');
 
 const app = express();
 
-app.use('/insights', insightsRouter)
+app.use('/insights', insightsRouter);
 
 // handle errors
 app.use((error, _, res, next) => {
