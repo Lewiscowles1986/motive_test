@@ -19,7 +19,28 @@ The api returns an array of transactions:
     "merchant": "TFL London",
     "category": "transport",
     "paymentDate": "2019-02-27T14:24:48.960Z"
-  }
+  },
+  {
+    "id": 3,
+    "amount": 79.99,
+    "merchant": "Tescos Ltd",
+    "category": "food",
+    "paymentDate": "2019-02-14T14:24:48.960Z"
+  },
+  {
+    "id": 4,
+    "amount": 16.32,
+    "merchant": "TFL London",
+    "category": "transport",
+    "paymentDate": "2019-02-27T14:24:48.960Z"
+  },
+  {
+    "id": 5,
+    "amount": 4.27,
+    "merchant": "TFL London",
+    "category": "transport",
+    "paymentDate": "2019-02-27T14:24:48.960Z"
+  },
 ]
 ```
 
@@ -36,9 +57,8 @@ I want to see a simple list of total spend by category
 
 ```json
 {
-  "food": 400, //accumulated total amount
-  "shopping": 200, //accumulated total amount
-  ...
+  "food": 179.99,
+  "transport": 40.59
 }
 ```
 
