@@ -1,6 +1,6 @@
 # Insights Service
 
-As part of out latest MVP build we need to present a user with some insights about their spending. We need to build a server that returns JSON formatted insights. A list of transactions for a user can be retrieved at `GET https://jigsaw-transactions.herokuapp.com/transactions`. (Make sure you use https!!!). The server should fetch this list, then calculate the insights below, and return them in the body of the response with a 200 response code. 
+As part of out latest MVP build we need to present a user with some insights about their spending. We need to build a server that returns JSON formatted insights. A list of transactions for a user can be retrieved at `GET https://motive-test-server-deploy.vercel.app/transactions`. (Make sure you use https!!!). The server should fetch this list, then calculate the insights below, and return them in the body of the response with a 200 response code. 
 
 The api returns an array of transactions:
 
