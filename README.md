@@ -1,6 +1,14 @@
 # Insights Service
 
-As part of out latest MVP build we need to present a user with some insights about their spending. We need to build a server that returns JSON formatted insights. A list of transactions for a user can be retrieved at `GET ` https://motive-test-server-deploy.vercel.app/transactions. (Make sure you use https!!!). The server should fetch this list, then calculate the insights below, and return them in the body of the response with a 200 response code. 
+As part of our latest MVP build, we need to present a user with some insights about their spending.
+
+We need to build a server that returns JSON formatted insights.
+
+A list of transactions for a user can be retrieved at:
+
+`GET ` https://motive-test-server-deploy.vercel.app/transactions. (Make sure you use https!!!).
+
+The server should fetch this list, then calculate the insights below, and return them in the body of the response with a 200 response code. 
 
 The api returns an array of transactions:
 
@@ -65,12 +73,14 @@ I want to see a simple list of total spend by category
 Then publish the results: 
 
 ```
-As a System
-So that I can asynchronously process information
+As a System Designer
+I want to asynchronously process information and
 I want to publish the total spend by category so other services can process it
+So that requests do not take too long
+And other systems can operate independently.
 ```
 
-Publish the results of the aggregated total spend by category to the AWS SQS queue `motive-test-queue`. 
+Publish the results of the aggregated total spend by category to the AWS SQS queue `motive-test-queue`.
 
 ### Using Localstack And Docker Compose:
 
@@ -134,6 +144,6 @@ returns a daily cashflow of all transactions grouped by day. For days on which t
 
 ## Things we value
 
-1. Well tested code. Whatever framework you use, we like testing our code to have certainty it works
+1. Well tested code. Whatever framework you use, we like testing our code to have certainty it works.
 2. Simple code. It shouldn't take a PHD to understand code. If it's that complicated, we've done something wrong.
 3. Code reuse. If there's an option to reuse some code, go for it!
